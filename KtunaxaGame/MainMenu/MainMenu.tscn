@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 592.0
+color = Color( 0.690196, 0.564706, 0.721569, 1 )
+
+[node name="Picture Game" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = 176.0
+margin_right = 640.0
+margin_bottom = 264.0
+text = "Picture Game"
+
+[node name="Spelling Game" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = 304.0
+margin_right = 640.0
+margin_bottom = 392.0
+text = "Spelling Game"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 72.0
+margin_right = 640.0
+margin_bottom = 160.0
+theme = SubResource( 1 )
+text = "Ktuxana Game"
+align = 1
+valign = 1
