@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://MainMenu/MainMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Audio/yellow.wav" type="AudioStream" id=2]
+[ext_resource path="res://AudioManager.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,4 +13,8 @@ margin_bottom = 600.0
 
 [node name="GameManager" type="Node2D" parent="."]
 
-[node name="MainMenu" parent="GameManager" instance=ExtResource( 2 )]
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
