@@ -10,7 +10,9 @@ var effectVolume := 0.0
 
 func _ready():
 	$GameManager.add_child(mainMenu.instance())
-	$AudioManager.startTrack(2, 0, false)
+	$AudioManager.startTrack(2, 0, true)
+	$TestTimer.start(3)
+	
 
 func changeGame(game : int):
 	# Changes the node in the GameManager using a given int as reference
@@ -30,5 +32,9 @@ func changeGame(game : int):
 		_:
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	
+	
 
+# DEBUG STUFF ==============================================
 
+func _on_TestTimer_timeout():
+	$AudioManager.startTrack(1, 0, false, 2)
