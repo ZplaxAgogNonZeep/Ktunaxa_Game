@@ -1,10 +1,16 @@
 extends Node2D
 
-var mainMenu = preload("res://MainMenu/MainMenu.tscn")
-var pictureGame = preload("res://PictureGame/PictureGame.tscn")
+var mainMenu := preload("res://MainMenu/MainMenu.tscn")
+var pictureGame := preload("res://PictureGame/PictureGame.tscn")
+
+# Options Variables
+var voiceVolume := 0.0
+var musicVolume := 0.0
+var effectVolume := 0.0
 
 func _ready():
 	$GameManager.add_child(mainMenu.instance())
+	$AudioManager.startTrack(2, 0, false)
 
 func changeGame(game : int):
 	# Changes the node in the GameManager using a given int as reference
@@ -25,5 +31,4 @@ func changeGame(game : int):
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	
 
-func playAudio():
-	pass
+
