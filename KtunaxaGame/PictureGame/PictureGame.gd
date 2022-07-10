@@ -12,8 +12,6 @@ var answer := ""
 
 func loadGame():
 	# Inherit. Loads game in for the first time. Sets up variables.
-	
-	wordList = game.wordList
 	startRound()
 
 
@@ -21,13 +19,16 @@ func startRound():
 	# Starts a round by choosing a new answer and two fake words then adding them
 	# to a list and shuffling
 	choices = []
+	answer = ""
+	firstTry = true
+	wordList = game.wordList.duplicate()
+	
 	var word = pullRandomWord()
 	answer = word
 	choices.append(word)
 	choices.append(pullRandomWord())
 	choices.append(pullRandomWord())
 	choices.shuffle()
-	
 	for i in range(choices.size()):
 		get_node("Button" + str(i)).icon = game.getAssetByIndex(int(choices[i].split("|")[0]))
 	
@@ -46,23 +47,29 @@ func pullRandomWord() -> String:
 	wordList.erase(word)
 	return word
 
-func isSelectionCorrect(ans : String):
+func isSelectionCorrect(ans : String, buttonNum: int):
 	# takes a an answer as a string and decides if it was the correct answer
 	if ans == answer:
 		pass # Correct Answer path
+		# play correct thing
+		if firstTry:
+			score += 1
+		startRound()
 	else:
-		pass # Incorrect Answer path
+		#Make sure to add incorrect juice
+		get_node("Button" + str(buttonNum)).disabled = true
+		firstTry = false
 
 func _on_Button0_pressed():
-	isSelectionCorrect(choices[0])
+	isSelectionCorrect(choices[0], 0)
 
 
 func _on_Button1_pressed():
-	isSelectionCorrect(choices[1])
+	isSelectionCorrect(choices[1], 1)
 
 
 func _on_Button2_pressed():
-	isSelectionCorrect(choices[2])
+	isSelectionCorrect(choices[2], 2)
 
 
 func _on_PlayAudio_pressed():
