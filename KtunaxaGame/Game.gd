@@ -9,7 +9,7 @@ var voiceVolume := 0.0
 var musicVolume := 0.0
 var effectVolume := 0.0
 
-var wordList := ["Blue", "Red", "Yellow"]
+var wordList := ["0|Yellow|0", "1|Red|0", "2|Blue|"]
 var translationList := []
 
 func _ready():
@@ -36,6 +36,13 @@ func changeGame(game : int):
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	
 	$GameManager.get_child(0).loadGame()
+
+# Asset Searching ===============================================================
+
+func getAssetByIndex(index : int):
+	# Gets specifically portraits by taking a given int and returning that filepath
+	return load("res://Assets/Portraits/" + str(index) + ".png")
+
 
 # DEBUG STUFF ==============================================
 

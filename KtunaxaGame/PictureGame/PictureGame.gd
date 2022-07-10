@@ -26,9 +26,17 @@ func startRound():
 	choices.append(word)
 	choices.append(pullRandomWord())
 	choices.append(pullRandomWord())
-	print(answer)
 	choices.shuffle()
-	print(choices)
+	
+	for i in range(choices.size()):
+		get_node("Button" + str(i)).icon = game.getAssetByIndex(int(choices[i].split("|")[0]))
+	
+	# THIS IS WHERE WE BUILD THE SPELLING LATER
+	$Word.text = answer.split("|")[1]
+	
+	$Button0.disabled = false
+	$Button1.disabled = false
+	$Button2.disabled = false
 
 func pullRandomWord() -> String:
 	# takes a random word from the list, removes it from the list, then returns the word.
@@ -38,13 +46,24 @@ func pullRandomWord() -> String:
 	wordList.erase(word)
 	return word
 
+func isSelectionCorrect(ans : String):
+	# takes a an answer as a string and decides if it was the correct answer
+	if ans == answer:
+		pass # Correct Answer path
+	else:
+		pass # Incorrect Answer path
+
 func _on_Button0_pressed():
-	pass # Replace with function body.
+	isSelectionCorrect(choices[0])
 
 
 func _on_Button1_pressed():
-	pass # Replace with function body.
+	isSelectionCorrect(choices[1])
 
 
 func _on_Button2_pressed():
-	pass # Replace with function body.
+	isSelectionCorrect(choices[2])
+
+
+func _on_PlayAudio_pressed():
+	game.get_node("AudioManager").startTrack(int(answer.split("|")[0]), 0, false, int(answer.split("|")[0]))
