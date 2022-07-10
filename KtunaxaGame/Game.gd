@@ -2,17 +2,19 @@ extends Node2D
 
 var mainMenu := preload("res://MainMenu/MainMenu.tscn")
 var pictureGame := preload("res://PictureGame/PictureGame.tscn")
+onready var AudioManager = get_node("AudioManager")
 
 # Options Variables
 var voiceVolume := 0.0
 var musicVolume := 0.0
 var effectVolume := 0.0
 
+var wordList := ["Blue", "Red", "Yellow"]
+var translationList := []
+
 func _ready():
 	$GameManager.add_child(mainMenu.instance())
-	$AudioManager.startTrack(2, 0, true)
-	$TestTimer.start(3)
-	
+
 
 func changeGame(game : int):
 	# Changes the node in the GameManager using a given int as reference
@@ -22,6 +24,7 @@ func changeGame(game : int):
 	if $GameManager.get_children() != []:
 		while $GameManager.get_child_count() != 0:
 			$GameManager.get_child(0).queue_free()
+			yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	
 	match game:

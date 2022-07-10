@@ -23,20 +23,30 @@ func startTrack(trackIndex : int, trackType : int, isLooping : bool, toReplace:=
 			track.volume_db = get_parent().effectVolume
 			folder = "SoundEffects"
 		_:
-			print("Start Track given an Invalid trackType at " + str(trackType))
+			print("startTrack() given an Invalid trackType at " + str(trackType))
 	
 	# This will crash if things go wrong so don't get things wrong!!!!
 	track.stream = load("res://Assets/" + folder + "/" + str(trackIndex) + ".wav")
 	
 	track.trackIndex = trackIndex
+	track.trackType = trackType
 	track.isLooping = isLooping
 	
 	if toReplace >= 0:
 		for i in range(get_child_count()):
-			if get_children()[i].trackIndex == toReplace:
+			if get_children()[i].trackIndex == toReplace and get_children()[i].trackType == toReplace:
 				get_children()[i].queue_free()
 				break
 	
 	add_child(track)
 	track.play()
 
+func clearAudio(trackType : int, clearAll:=false):
+	# Deletes all tracks of a given type, if clearAll is given, deletes all tracks
+	if clearAll:
+		for i in range(get_child_count()):
+			get_child(0).queue_free()
+	else:
+		for i in range(get_child_count()):
+			if get_child(0).trackType == trackType:
+				get_child(0).queue_free()
