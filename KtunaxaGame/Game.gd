@@ -9,7 +9,7 @@ var voiceVolume := 0.0
 var musicVolume := 0.0
 var effectVolume := 0.0
 
-var wordList := ["0|Yellow|0", "1|Red|0", "2|Blue|"]
+var wordList := ["0|Yellow|0", "1|Red|0", "2|Blue|0", "3|Green|0", "4|Purple|0", "5|Orange|0", "6|Pink|0", "7|Brown|0", "8|Black|0", "9|White|0"]
 var translationList := []
 
 func _ready():

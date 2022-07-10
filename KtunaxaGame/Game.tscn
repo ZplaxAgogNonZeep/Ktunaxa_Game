@@ -13,12 +13,16 @@ margin_right = 1024.0
 margin_bottom = 600.0
 mouse_filter = 2
 
-[node name="Button" type="Button" parent="UIManager"]
+[node name="Options" type="Button" parent="UIManager"]
 margin_left = 936.0
 margin_top = 24.0
 margin_right = 1000.0
 margin_bottom = 88.0
 text = "Options"
+
+[node name="OptionsMenu" type="Control" parent="UIManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource( 3 )
