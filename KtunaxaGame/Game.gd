@@ -35,7 +35,7 @@ func changeGame(game : int):
 		_:
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	
-	
+	$GameManager.get_child(0).loadGame()
 
 # DEBUG STUFF ==============================================
 
