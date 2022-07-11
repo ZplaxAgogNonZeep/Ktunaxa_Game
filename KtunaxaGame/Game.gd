@@ -44,7 +44,16 @@ func getAssetByIndex(index : int):
 	return load("res://Assets/Portraits/" + str(index) + ".png")
 
 
+# Signals ======================================================================
+func _on_Options_pressed():
+	var menu = load("res://OptionsMenu.tscn").instance()
+	$UIManager.add_child(menu)
+
+
 # DEBUG STUFF ==============================================
 
 func _on_TestTimer_timeout():
 	$AudioManager.startTrack(1, 0, false, 2)
+
+
+

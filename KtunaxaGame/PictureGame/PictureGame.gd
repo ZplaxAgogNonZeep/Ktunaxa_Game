@@ -98,4 +98,5 @@ func _on_Button2_pressed():
 
 
 func _on_PlayAudio_pressed():
-	game.get_node("AudioManager").startTrack(int(answer.split("|")[0]), 0, false, int(answer.split("|")[0]))
+#	game.get_node("AudioManager").startTrack(int(answer.split("|")[0]), 0, false, int(answer.split("|")[0]))
+	game.get_node("AudioManager").startTrack(3, 0, false, 3)
