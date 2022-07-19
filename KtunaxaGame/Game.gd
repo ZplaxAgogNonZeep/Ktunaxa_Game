@@ -5,14 +5,16 @@ var pictureGame := preload("res://PictureGame/PictureGame.tscn")
 onready var AudioManager = get_node("AudioManager")
 
 # Options Variables
-var voiceVolume := 0.0
-var musicVolume := 0.0
-var effectVolume := 0.0
+var voiceVolume := 0
+var musicVolume := 0
+var effectVolume := 0
 
-var wordList := ["0|Yellow|0", "1|Red|0", "2|Blue|0", "3|Green|0", "4|Purple|0", "5|Orange|0", "6|Pink|0", "7|Brown|0", "8|Black|0", "9|White|0"]
-var translationList := []
+# Word Variables
+var wordList := []
 
 func _ready():
+	loadWordList()
+	loadOptions()
 	$GameManager.add_child(mainMenu.instance())
 
 
@@ -37,20 +39,73 @@ func changeGame(game : int):
 	
 	$GameManager.get_child(0).loadGame()
 
-# Asset Searching ===============================================================
+# Saving and Loading ===============================================================================
+
+func saveOptions():
+	# Writes the variables for the options menu in a text file for loading later
+	var file = File.new()
+	
+	if file.file_exists("res://Data/Options.txt"):
+		file.open("res://Data/Options.txt", File.WRITE)
+		var fileContent = ""
+		
+		# 0
+		fileContent += "Voice Volume=" + str(voiceVolume) + "\n"
+		# 1
+		fileContent += "Music Volume=" + str(musicVolume) + "\n"
+		# 2
+		fileContent += "Sound Effect Volume=" + str(effectVolume) + "\n"
+		
+		file.store_string(fileContent)
+		file.close()
+	else:
+		pass
+
+func loadOptions():
+	# Loads all the options menu reated information from a text file and updates all the variables
+	var file = File.new()
+	
+	if file.file_exists("res://Data/Options.txt"):
+		file.open("res://Data/Options.txt", File.READ)
+		if file.get_as_text() != "":
+			var splitList = file.get_as_text().split("\n")
+			
+			voiceVolume = int(splitList[0].split("=")[1])
+			musicVolume = int(splitList[1].split("=")[1])
+			effectVolume = int(splitList[2].split("=")[1])
+		else:
+			saveOptions()
+		
+		file.close()
+	else:
+		pass
+
+func loadWordList():
+	# Loads a list of all translatable words from a text file
+	var file = File.new()
+	if file.file_exists("res://Data/WordList.txt"):
+		file.open("res://Data/WordList.txt", File.READ)
+		
+		wordList = file.get_as_text().split("\n")
+		
+		file.close()
+	else:
+		print("FILE DOES NOT EXIST")
+
+# Asset Searching ==================================================================================
 
 func getAssetByIndex(index : int):
 	# Gets specifically portraits by taking a given int and returning that filepath
 	return load("res://Assets/Portraits/" + str(index) + ".png")
 
 
-# Signals ======================================================================
+# Signals ==========================================================================================
 func _on_Options_pressed():
 	var menu = load("res://OptionsMenu.tscn").instance()
 	$UIManager.add_child(menu)
 
 
-# DEBUG STUFF ==============================================
+# DEBUG STUFF ======================================================================================
 
 func _on_TestTimer_timeout():
 	$AudioManager.startTrack(1, 0, false, 2)

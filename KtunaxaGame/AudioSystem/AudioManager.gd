@@ -34,8 +34,8 @@ func startTrack(trackIndex : int, trackType : int, isLooping : bool, toReplace:=
 	
 	if toReplace >= 0:
 		for i in range(get_child_count()):
-			if get_children()[i].trackIndex == toReplace and get_children()[i].trackType == toReplace:
-				get_children()[i].queue_free()
+			if get_child(i).trackIndex == toReplace and get_child(i).trackType == trackType:
+				get_child(i).queue_free()
 				break
 	
 	add_child(track)
@@ -48,10 +48,10 @@ func clearAudio(trackType : int, clearAll:=false):
 			get_child(0).queue_free()
 	else:
 		for i in range(get_child_count()):
-			if get_child(0).trackType == trackType:
-				get_child(0).queue_free()
+			if get_child(i).trackType == trackType:
+				get_child(i).queue_free()
 
-func changeVolume(trackType : int, value : float):
+func changeVolume(trackType : int, value : int):
 	# Changes all tracks of a specific type to a given volume
 	for i in range(get_child_count()):
 		if get_child(i).trackType == trackType:
