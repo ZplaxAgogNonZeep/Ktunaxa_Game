@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="Letter" type="Sprite"]
+scale = Vector2( 0.25, 0.25 )
