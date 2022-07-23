@@ -15,7 +15,8 @@ var wordList := []
 func _ready():
 	loadWordList()
 	loadOptions()
-	$GameManager.add_child(mainMenu.instance())
+	changeGame(0)
+#	$GameManager.add_child(mainMenu.instance())
 
 
 func changeGame(game : int):

@@ -38,14 +38,14 @@ func startRound():
 		get_node("Button" + str(i)).icon = game.getAssetByIndex(int(choices[i].split("|")[0]))
 	
 	# THIS IS WHERE WE BUILD THE SPELLING LATER
-	$Word.text = answer.split("|")[1]
+	$WordGenerator.generateWord(answer.split("|")[2])
 	
 	enableButtons()
 
 func endGame():
 	# Ends the game, giving a total score message and gives the option of retrying or returning to menu
 	print("Game Over")
-	$Word.text = "You Win!"
+#	$Word.text = "You Win!"
 
 func isSelectionCorrect(ans : String, buttonNum: int):
 	# takes a an answer as a string and decides if it was the correct answer

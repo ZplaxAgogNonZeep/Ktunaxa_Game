@@ -6,13 +6,10 @@ var letter = preload("res://WordSystem/Letter.tscn")
 
 export var spacing := 30
 
-func _ready():
-	generateWord("17>0>24>21")
-
 func generateWord(wordCode : String):
 	# Starts the word generation process, takes a string of numbers that will make
 	# up the word to be generated then creates Sprite nodes in the form of the word
-	
+	print("Word being Generated")
 	# Removes anything in the WordManager
 	for i in range($WordManager.get_child_count()):
 		$WordManager.get_child(i).queue_free()
