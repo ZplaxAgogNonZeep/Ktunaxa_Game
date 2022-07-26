@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cupqa.png-2fdf294b43115db7102d2d71392b7091.stex"
+path="res://.import/butterfly.png-476aaa8c533aec10b66af50ccf7733b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/cupqa.png"
-dest_files=[ "res://.import/cupqa.png-2fdf294b43115db7102d2d71392b7091.stex" ]
+source_file="res://Assets/Portraits/butterfly.png"
+dest_files=[ "res://.import/butterfly.png-476aaa8c533aec10b66af50ccf7733b4.stex" ]
 
 [params]
 

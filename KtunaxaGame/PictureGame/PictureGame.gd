@@ -35,7 +35,7 @@ func startRound():
 	choices.append(pullRandomWord())
 	choices.shuffle()
 	for i in range(choices.size()):
-		get_node("Button" + str(i)).icon = game.getAssetByIndex(int(choices[i].split("|")[0]))
+		get_node("Button" + str(i)).icon = game.getAssetByName(choices[i].split("|")[1])
 	
 	# THIS IS WHERE WE BUILD THE SPELLING LATER
 	$WordGenerator.generateWord(answer.split("|")[2])

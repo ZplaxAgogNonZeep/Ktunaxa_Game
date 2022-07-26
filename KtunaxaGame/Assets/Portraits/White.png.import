@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cikin.png-972a8c12843964b974219136dc99146b.stex"
+path="res://.import/White.png-5851ee2fabbe53c967afab648dcd5b95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/cikin.png"
-dest_files=[ "res://.import/cikin.png-972a8c12843964b974219136dc99146b.stex" ]
+source_file="res://Assets/Portraits/White.png"
+dest_files=[ "res://.import/White.png-5851ee2fabbe53c967afab648dcd5b95.stex" ]
 
 [params]
 

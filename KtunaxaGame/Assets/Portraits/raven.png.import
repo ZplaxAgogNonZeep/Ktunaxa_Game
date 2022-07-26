@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/watak.png-c975fdc7d9c0c4b61c69bbd81b4c35b1.stex"
+path="res://.import/raven.png-a3ab49429491414bbb03ecf0bed32ec1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/watak.png"
-dest_files=[ "res://.import/watak.png-c975fdc7d9c0c4b61c69bbd81b4c35b1.stex" ]
+source_file="res://Assets/Portraits/raven.png"
+dest_files=[ "res://.import/raven.png-a3ab49429491414bbb03ecf0bed32ec1.stex" ]
 
 [params]
 

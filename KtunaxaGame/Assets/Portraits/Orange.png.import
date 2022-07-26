@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kinuqsata.png-b17761f652d7e03daa1a4056d8e2f1ef.stex"
+path="res://.import/Orange.png-563e2a9e0a106cae4d8629ae660790df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/kinuqsata.png"
-dest_files=[ "res://.import/kinuqsata.png-b17761f652d7e03daa1a4056d8e2f1ef.stex" ]
+source_file="res://Assets/Portraits/Orange.png"
+dest_files=[ "res://.import/Orange.png-563e2a9e0a106cae4d8629ae660790df.stex" ]
 
 [params]
 

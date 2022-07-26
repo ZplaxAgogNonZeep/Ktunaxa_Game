@@ -44,7 +44,7 @@ func startTrack(trackIndex : int, trackType : int, isLooping : bool, toReplace:=
 func clearAudio(trackType : int, clearAll:=false):
 	# Deletes all tracks of a given type, if clearAll is given, deletes all tracks
 	if clearAll:
-		for i in range(get_child_count()):
+		for _i in range(get_child_count()):
 			get_child(0).queue_free()
 	else:
 		for i in range(get_child_count()):

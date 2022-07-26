@@ -95,9 +95,9 @@ func loadWordList():
 
 # Asset Searching ==================================================================================
 
-func getAssetByIndex(index : int):
-	# Gets specifically portraits by taking a given int and returning that filepath
-	return load("res://Assets/Portraits/" + str(index) + ".png")
+func getAssetByName(name : String):
+	# Gets specifically portraits by it's name
+	return load("res://Assets/Portraits/" + name + ".png")
 
 
 # Signals ==========================================================================================

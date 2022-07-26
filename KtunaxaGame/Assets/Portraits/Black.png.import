@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/qukin.png-44250a1c23b94c17d1d2932640166e5c.stex"
+path="res://.import/Black.png-a545703e704640d60bed58d3fb853f8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/qukin.png"
-dest_files=[ "res://.import/qukin.png-44250a1c23b94c17d1d2932640166e5c.stex" ]
+source_file="res://Assets/Portraits/Black.png"
+dest_files=[ "res://.import/Black.png-a545703e704640d60bed58d3fb853f8a.stex" ]
 
 [params]
 

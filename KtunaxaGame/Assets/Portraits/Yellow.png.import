@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kakin.png-17e73d38a0022575ab922d2d01e686f9.stex"
+path="res://.import/Yellow.png-39c8e9ec3f601f2111e4c226800fc937.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/kakin.png"
-dest_files=[ "res://.import/kakin.png-17e73d38a0022575ab922d2d01e686f9.stex" ]
+source_file="res://Assets/Portraits/Yellow.png"
+dest_files=[ "res://.import/Yellow.png-39c8e9ec3f601f2111e4c226800fc937.stex" ]
 
 [params]
 

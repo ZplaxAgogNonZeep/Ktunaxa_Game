@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cikku.png-b6719174397b4d8d7c1a8780decd1b02.stex"
+path="res://.import/Purple.png-f37255367a984b1c431f13f2c657c760.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portraits/cikku.png"
-dest_files=[ "res://.import/cikku.png-b6719174397b4d8d7c1a8780decd1b02.stex" ]
+source_file="res://Assets/Portraits/Purple.png"
+dest_files=[ "res://.import/Purple.png-f37255367a984b1c431f13f2c657c760.stex" ]
 
 [params]
 
