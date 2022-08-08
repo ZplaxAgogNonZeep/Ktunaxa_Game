@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Portraits/bird.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Portraits/Red.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Letters/1.png" type="Texture" id=4]
+
+[node name="SpellingGame" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Red" type="Sprite" parent="."]
+position = Vector2( 267.5, 160 )
+scale = Vector2( 0.0390001, 0.048 )
+texture = ExtResource( 3 )
+
+[node name="Red2" type="Sprite" parent="."]
+position = Vector2( 320, 160 )
+scale = Vector2( 0.0319999, 0.0499999 )
+texture = ExtResource( 3 )
+
+[node name="LetterManager" type="Node2D" parent="."]
+
+[node name="1" type="Sprite" parent="LetterManager"]
+position = Vector2( 168, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="2" type="Sprite" parent="LetterManager"]
+position = Vector2( 232, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="3" type="Sprite" parent="LetterManager"]
+position = Vector2( 296, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="4" type="Sprite" parent="LetterManager"]
+position = Vector2( 360, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="5" type="Sprite" parent="LetterManager"]
+position = Vector2( 424, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="6" type="Sprite" parent="LetterManager"]
+position = Vector2( 488, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="7" type="Sprite" parent="LetterManager"]
+position = Vector2( 552, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="8" type="Sprite" parent="LetterManager"]
+position = Vector2( 616, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="9" type="Sprite" parent="LetterManager"]
+position = Vector2( 200, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="10" type="Sprite" parent="LetterManager"]
+position = Vector2( 264, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="11" type="Sprite" parent="LetterManager"]
+position = Vector2( 328, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="12" type="Sprite" parent="LetterManager"]
+position = Vector2( 392, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="13" type="Sprite" parent="LetterManager"]
+position = Vector2( 456, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="14" type="Sprite" parent="LetterManager"]
+position = Vector2( 680, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="15" type="Sprite" parent="LetterManager"]
+position = Vector2( 744, 336 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="16" type="Sprite" parent="LetterManager"]
+position = Vector2( 520, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="17" type="Sprite" parent="LetterManager"]
+position = Vector2( 584, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="18" type="Sprite" parent="LetterManager"]
+position = Vector2( 648, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="19" type="Sprite" parent="LetterManager"]
+position = Vector2( 712, 384 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="20" type="Sprite" parent="LetterManager"]
+position = Vector2( 168, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="21" type="Sprite" parent="LetterManager"]
+position = Vector2( 232, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="22" type="Sprite" parent="LetterManager"]
+position = Vector2( 296, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="23" type="Sprite" parent="LetterManager"]
+position = Vector2( 360, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="24" type="Sprite" parent="LetterManager"]
+position = Vector2( 424, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="25" type="Sprite" parent="LetterManager"]
+position = Vector2( 488, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="26" type="Sprite" parent="LetterManager"]
+position = Vector2( 552, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="27" type="Sprite" parent="LetterManager"]
+position = Vector2( 616, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="28" type="Sprite" parent="LetterManager"]
+position = Vector2( 680, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="29" type="Sprite" parent="LetterManager"]
+position = Vector2( 744, 432 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 112, 160 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
