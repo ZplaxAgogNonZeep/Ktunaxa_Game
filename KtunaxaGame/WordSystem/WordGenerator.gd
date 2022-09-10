@@ -4,7 +4,7 @@ extends Node2D
 
 var letter = preload("res://WordSystem/Letter.tscn")
 
-export var spacing := 30
+const SPACING := 30
 
 func generateWord(wordCode : String):
 	# Starts the word generation process, takes a string of numbers that will make
@@ -23,11 +23,11 @@ func generateWord(wordCode : String):
 	for i in range(letterList.size()):
 		var newLetter = letter.instance()
 		newLetter.texture = getLetter(letterList[i])
-		posn.x = posn.x + spacing
+		posn.x = posn.x + SPACING
 		newLetter.global_position = Vector2(posn.x, posn.y)
 		$WordManager.add_child(newLetter)
 	
-	posn.x += spacing
+	posn.x += SPACING
 	
 	# Makes the word centered onto the Absolute Position node
 	$WordManager.position = Vector2(
