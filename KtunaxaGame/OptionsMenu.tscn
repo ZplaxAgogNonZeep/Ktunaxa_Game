@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/UI/OptionsBG.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/music symbol.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/UI/Main Menu A.png" type="Texture" id=6]
 [ext_resource path="res://Assets/UI/Voice Symbol.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/slider.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/OptionsA.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
@@ -102,6 +103,10 @@ custom_styles/normal = SubResource( 4 )
 position = Vector2( 322, 192 )
 texture = ExtResource( 7 )
 
+[node name="OptionsA" type="Sprite" parent="VoiceSymbol"]
+position = Vector2( 119, -72 )
+texture = ExtResource( 9 )
+
 [node name="MusicSymbol" type="Sprite" parent="."]
 position = Vector2( 321, 266 )
 texture = ExtResource( 2 )
@@ -111,7 +116,7 @@ margin_left = 374.0
 margin_top = 188.0
 margin_right = 587.0
 margin_bottom = 204.0
-color = Color( 0.427451, 0.980392, 0.513726, 1 )
+color = Color( 0.427451, 0.980392, 0.513726, 0.67451 )
 
 [node name="VoiceSlider" type="HSlider" parent="."]
 margin_left = 368.0
@@ -132,6 +137,32 @@ scrollable = false
 [node name="VoiceTimer" type="Timer" parent="VoiceSlider"]
 one_shot = true
 
+[node name="MusicFill-in" type="ColorRect" parent="."]
+margin_left = 374.0
+margin_top = 260.0
+margin_right = 587.0
+margin_bottom = 276.0
+color = Color( 0.937255, 0.427451, 0.980392, 0.737255 )
+
+[node name="MusicSlider" type="HSlider" parent="."]
+margin_left = 368.0
+margin_top = 240.0
+margin_right = 593.0
+margin_bottom = 294.0
+custom_icons/grabber_disabled = SubResource( 7 )
+custom_icons/grabber_highlight = SubResource( 9 )
+custom_icons/grabber = SubResource( 5 )
+custom_styles/slider = SubResource( 13 )
+custom_styles/grabber_area_highlight = SubResource( 17 )
+custom_styles/grabber_area = SubResource( 18 )
+min_value = -24.0
+max_value = 24.0
+rounded = true
+scrollable = false
+
+[node name="MusicTimer" type="Timer" parent="MusicSlider"]
+one_shot = true
+
 [node name="CloseButton" type="Button" parent="."]
 margin_left = 816.0
 margin_top = 16.0
@@ -142,4 +173,6 @@ theme = ExtResource( 4 )
 [connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]
 [connection signal="value_changed" from="VoiceSlider" to="." method="_on_VoiceSlider_value_changed"]
 [connection signal="timeout" from="VoiceSlider/VoiceTimer" to="." method="_on_VoiceTimer_timeout"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="timeout" from="MusicSlider/MusicTimer" to="." method="_on_MusicTimer_timeout"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
