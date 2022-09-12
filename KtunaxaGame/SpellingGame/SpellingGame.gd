@@ -4,8 +4,7 @@ onready var game = get_tree().root.get_node("Game")
 
 var answerCode : String
 
-func _ready():
-	loadGame()
+
 
 func loadGame():
 	# Inherit. Loads game in for the first time. Sets up variables.
@@ -14,7 +13,7 @@ func loadGame():
 	newWordList.shuffle()
 	answerCode = newWordList[0].split("|")[2]
 	
-	
+	print(answerCode)
 	$AnswerGenerator.drawEmpty(answerCode)
 	
 	var count = 1
@@ -22,10 +21,15 @@ func loadGame():
 	while (count <= $LetterManager.get_child_count()):
 		$LetterManager.get_node(str(count)).texture = getLetter(str(count))
 		count += 1
-	
-	
 
-# Game Functions ===================================================================================
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			for i in $LetterManager.get_child_count():
+				if ($LetterManager.get_child(i).isMouse):
+					$AnswerGenerator.typeLetter($LetterManager.get_child(i).letterCode)
+					break
 
 # Helper Functions
 func getLetter(index : String):

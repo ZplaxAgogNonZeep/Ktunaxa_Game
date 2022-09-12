@@ -8,7 +8,10 @@ var answer : Array
 var typePosn := 0
 
 var numberOfLines = 0
-
+#
+#func _ready():
+#	drawEmpty("1>2>3>4")
+#	typeLetter("1")
 
 func drawEmpty(wordCode : String):
 	# Starts the Genertion Process. takes a word code and draws out a fill in the blank answer
@@ -81,6 +84,7 @@ func drawEmpty(wordCode : String):
 
 
 func typeLetter(letter : String):
+	print("Type Letter Called with Letter Code: " + letter)
 	var count = 0
 	
 	while (count < numberOfLines):
@@ -88,7 +92,8 @@ func typeLetter(letter : String):
 			typePosn += 1
 			
 		if get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)) != null:
-			get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)).texture = getLetter(letter)
+			print("Letter" + str(typePosn) + " exists")
+			get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)).set_texture(getLetter(letter)) 
 			
 			typePosn += 1
 			return true
@@ -120,6 +125,7 @@ func getLetter(index : String):
 	# takes a number in a string and returns the corrosponding file. if given 0, will return a null
 	# to create a space
 	if int(index) > 0:
+		print("Letter Code " + index + " Found")
 		return load("res://Assets/Letters/" + index + ".png")
 	else:
 		return null
