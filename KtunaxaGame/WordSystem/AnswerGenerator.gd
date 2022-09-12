@@ -84,6 +84,9 @@ func drawEmpty(wordCode : String):
 
 
 func typeLetter(letter : String):
+	# TODO:
+	# fix Stack Overflow Issues
+	
 	print("Type Letter Called with Letter Code: " + letter)
 	var count = 0
 	
@@ -102,6 +105,8 @@ func typeLetter(letter : String):
 	return false
 
 func deleteLetter():
+	# TODO:
+	# fix Stack Overflow Issues
 	var count = 0
 	
 	while (count < numberOfLines):

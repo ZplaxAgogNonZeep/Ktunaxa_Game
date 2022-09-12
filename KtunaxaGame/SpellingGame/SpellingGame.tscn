@@ -119,4 +119,13 @@ position = Vector2( 680, 432 )
 [node name="29" parent="LetterManager" instance=ExtResource( 4 )]
 position = Vector2( 744, 432 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 752.0
+margin_top = 256.0
+margin_right = 847.0
+margin_bottom = 296.0
+text = "Delete"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
 [editable path="AnswerGenerator"]

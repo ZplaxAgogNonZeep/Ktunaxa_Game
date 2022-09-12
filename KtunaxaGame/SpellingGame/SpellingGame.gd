@@ -3,8 +3,9 @@ extends Node2D
 onready var game = get_tree().root.get_node("Game")
 
 var answerCode : String
+var answerArray : Array
 
-
+var currentGuess : Array = []
 
 func loadGame():
 	# Inherit. Loads game in for the first time. Sets up variables.
@@ -12,6 +13,8 @@ func loadGame():
 	var newWordList = game.wordList.duplicate()
 	newWordList.shuffle()
 	answerCode = newWordList[0].split("|")[2]
+	answerArray = answerCode.split(">")
+	$Image.texture = game.getAssetByName(newWordList[0].split("|")[1])
 	
 	print(answerCode)
 	$AnswerGenerator.drawEmpty(answerCode)
@@ -29,7 +32,13 @@ func _unhandled_input(event):
 			for i in $LetterManager.get_child_count():
 				if ($LetterManager.get_child(i).isMouse):
 					$AnswerGenerator.typeLetter($LetterManager.get_child(i).letterCode)
+					currentGuess.append($LetterManager.get_child(i).letterCode)
+					checkForWin()
 					break
+
+func _on_Button_pressed():
+	$AnswerGenerator.deleteLetter()
+	currentGuess.remove(currentGuess.size() - 1)
 
 # Helper Functions
 func getLetter(index : String):
@@ -39,3 +48,10 @@ func getLetter(index : String):
 		return load("res://Assets/Letters/" + index + ".png")
 	else:
 		return null
+
+func checkForWin():
+	if (currentGuess == answerArray):
+		print("Game Over")
+
+
+	
