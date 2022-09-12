@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://WordSystem/AnswerGenerator.gd" type="Script" id=1]
+[ext_resource path="res://WordSystem/Line.tscn" type="PackedScene" id=2]
 
 [node name="AnswerGenerator" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,4 +12,4 @@ position = Vector2( 192, 128 )
 [node name="EndPosn" type="Position2D" parent="."]
 position = Vector2( 512, 128 )
 
-[node name="FirstLine" type="Node2D" parent="."]
+[node name="Line0" parent="." instance=ExtResource( 2 )]

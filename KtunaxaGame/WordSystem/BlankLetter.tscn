@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Portraits/Red.png" type="Texture" id=1]
+
+[node name="BlankLetter" type="Sprite"]
+scale = Vector2( 0.048, 0.075 )
+texture = ExtResource( 1 )
