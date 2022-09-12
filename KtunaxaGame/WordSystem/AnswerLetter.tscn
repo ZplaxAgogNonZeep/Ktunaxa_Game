@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Assets/Letters/1.png" type="Texture" id=1]
+[gd_scene format=2]
 
 [node name="AnswerLetter" type="Sprite"]
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 1 )

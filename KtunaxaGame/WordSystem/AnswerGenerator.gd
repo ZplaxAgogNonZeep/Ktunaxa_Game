@@ -1,13 +1,19 @@
 extends Node2D
 
-var answer : Array
 const SPACING = 50.0
 const HEIGHT = 80.0
-
 onready var linePath = preload("res://WordSystem/Line.tscn")
 
+var answer : Array
+var typePosn := 0
+
+var numberOfLines = 0
+
 func _ready():
-	drawEmpty("1>2>3>4>6>7>8")
+	drawEmpty("1>0>3>4>6>7>8")
+	typeLetter("12")
+	typeLetter("29")
+	typeLetter("2")
 
 func drawEmpty(wordCode : String):
 	# Starts the Genertion Process. takes a word code and draws out a fill in the blank answer
@@ -30,8 +36,11 @@ func drawEmpty(wordCode : String):
 			
 			blankInstance.position = posn
 			answerLetterInstance.position = posn
-			answerLetterInstance.texture = getLetter(answer[count])
-			answerLetterInstance.visible = false
+			
+			
+			answerLetterInstance.name = "Letter" + str(count)
+			
+			
 			
 			$Line0.add_child(blankInstance)
 			$Line0.add_child(answerLetterInstance)
@@ -66,16 +75,32 @@ func drawEmpty(wordCode : String):
 				
 				blankInstance.position = posn
 				answerLetterInstance.position = posn
-				answerLetterInstance.texture = getLetter(answer[count])
-				answerLetterInstance.visible = false
+				
+				
 				
 				get_node("Line" + str(lineCount)).add_child(blankInstance)
 				get_node("Line" + str(lineCount)).add_child(answerLetterInstance)
 				
 			count += 1
+	numberOfLines = lineCount + 1
 
-func revealLetter(guess : String):
+func typeLetter(letter : String):
+	var count = 0
 	
+	while (count < numberOfLines):
+		if answer[typePosn] == "0":
+			typePosn += 1
+			
+		if get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)) != null:
+			get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)).texture = getLetter(letter)
+			print(get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)))
+			typePosn += 1
+			return true
+		else:
+			count += 1
+	return false
+	
+
 
 func getLetter(index : String):
 	# takes a number in a string and returns the corrosponding file. if given 0, will return a null
