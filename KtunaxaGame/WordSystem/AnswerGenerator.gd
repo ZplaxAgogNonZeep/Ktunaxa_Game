@@ -9,11 +9,6 @@ var typePosn := 0
 
 var numberOfLines = 0
 
-func _ready():
-	drawEmpty("1>0>3>4>6>7>8")
-	typeLetter("12")
-	typeLetter("29")
-	typeLetter("2")
 
 func drawEmpty(wordCode : String):
 	# Starts the Genertion Process. takes a word code and draws out a fill in the blank answer
@@ -84,6 +79,7 @@ func drawEmpty(wordCode : String):
 			count += 1
 	numberOfLines = lineCount + 1
 
+
 func typeLetter(letter : String):
 	var count = 0
 	
@@ -93,14 +89,32 @@ func typeLetter(letter : String):
 			
 		if get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)) != null:
 			get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)).texture = getLetter(letter)
-			print(get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)))
+			
 			typePosn += 1
 			return true
 		else:
 			count += 1
 	return false
-	
 
+func deleteLetter():
+	var count = 0
+	
+	while (count < numberOfLines):
+		
+		if answer[typePosn] == "0":
+			typePosn -= 1
+		
+		typePosn -= 1
+		if get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)) != null:
+			print("Correct Letter Found")
+			get_node("Line" + str(count)).get_node_or_null("Letter" + str(typePosn)).texture = null
+			
+			
+			print(typePosn)
+			return true
+		else:
+			count += 1
+		return false
 
 func getLetter(index : String):
 	# takes a number in a string and returns the corrosponding file. if given 0, will return a null
