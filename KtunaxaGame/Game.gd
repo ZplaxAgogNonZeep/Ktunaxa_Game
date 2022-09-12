@@ -2,6 +2,7 @@ extends Node2D
 
 var mainMenu := preload("res://MainMenu/MainMenu.tscn")
 var pictureGame := preload("res://PictureGame/PictureGame.tscn")
+var spellingGame := preload("res://SpellingGame/SpellingGame.tscn")
 onready var AudioManager = get_node("AudioManager")
 
 # Options Variables
@@ -35,6 +36,8 @@ func changeGame(game : int):
 			$GameManager.add_child(mainMenu.instance())
 		1:
 			$GameManager.add_child(pictureGame.instance())
+		2:
+			$GameManager.add_child(spellingGame.instance())
 		_:
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	

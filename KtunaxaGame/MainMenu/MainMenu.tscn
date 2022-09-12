@@ -31,7 +31,6 @@ margin_left = 72.0
 margin_top = 368.0
 margin_right = 328.0
 margin_bottom = 456.0
-disabled = true
 text = "Spelling Game"
 
 [node name="Label" type="Label" parent="."]
@@ -58,5 +57,6 @@ texture = ExtResource( 5 )
 position = Vector2( 256, 88 )
 
 [connection signal="pressed" from="Picture Game" to="." method="_on_Picture_Game_pressed"]
+[connection signal="pressed" from="Spelling Game" to="." method="_on_Spelling_Game_pressed"]
 
 [editable path="WordGenerator"]

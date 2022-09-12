@@ -15,3 +15,7 @@ func loadGame():
 
 func _on_Picture_Game_pressed():
 	game.changeGame(1)
+
+
+func _on_Spelling_Game_pressed():
+	game.changeGame(2)
