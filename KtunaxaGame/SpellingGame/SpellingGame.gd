@@ -1,5 +1,9 @@
 extends Node2D
 
+# Rules:
+# Each Round, a new animal will be chosen and a random selection of letters will be generated that contain 
+# the the neccesary characters. The player must then type out the word using the on-screen keyboard
+
 onready var game = get_tree().root.get_node("Game")
 
 var answerCode : String
@@ -20,7 +24,7 @@ func loadGame():
 	print(answerCode)
 	$AnswerGenerator.drawEmpty(answerCode)
 	
-	var count = 1
+#	var count = 1
 	
 	SetKeyboard()
 #	while (count <= $LetterManager.get_child_count()):

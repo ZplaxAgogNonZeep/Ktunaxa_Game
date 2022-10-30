@@ -6,6 +6,8 @@ var spellingGame := preload("res://SpellingGame/SpellingGame.tscn")
 onready var AudioManager = get_node("AudioManager")
 
 # Options Variables
+
+## The value corrisponding to the volume of the music
 var voiceVolume := 0
 var musicVolume := 0
 var effectVolume := 0
@@ -42,6 +44,7 @@ func changeGame(game : int):
 			print("changeGame() Could not find appropriate scene with given input of " + str(game))
 	
 	$GameManager.get_child(0).loadGame()
+	
 
 # Saving and Loading ===============================================================================
 

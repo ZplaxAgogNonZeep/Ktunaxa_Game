@@ -1,5 +1,8 @@
 extends Node2D
 
+# This was originally going to be a fill in the blank kind of gameplay. 
+# Client has requesting to change gameplay to a normal input textbox that clears when spelled correctly
+
 const SPACING = 50.0
 const HEIGHT = 80.0
 onready var linePath = preload("res://WordSystem/Line.tscn")
