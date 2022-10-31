@@ -1,16 +1,19 @@
 extends Node2D
 
 var letterList : Array = []
-const SIZE = 14
+const SIZE = 15
 
 func _ready():
-	var count = 1
 	
+	# Filling the letterList with numbers from 1-29
+	var count = 1
 	while count < 30:
 		letterList.append(str(count))
 		count += 1
 	
 	generateKeyboard(["1", "12", "13"])
+
+# Public Funtions ==================================================================================
 
 func generateKeyboard(answerList : Array):
 	# Takes a list of string numbers that represent the word that needs to be spelled.
@@ -32,4 +35,7 @@ func generateKeyboard(answerList : Array):
 	
 	finalKeyboardList.shuffle()
 	
-	print(finalKeyboardList)
+	count = 0
+	while count < 15:
+		$KeyManager.get_node(str(count)).setLetter(int(finalKeyboardList[count]), true)
+		count += 1
